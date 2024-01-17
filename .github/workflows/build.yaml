@@ -62,6 +62,7 @@ jobs:
         with:
           source_file: 'helm/values.yaml'
           destination_repo: 'jpazdyga/whoami'
+          destination_folder: 'helm'
           user_email: 'gha@lascalia.com'
           user_name: 'Github Actions'
           commit_message: 'GHA autoupdate of values.yaml to be consumed by argocd'
