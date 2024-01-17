@@ -8,7 +8,7 @@ image:
   repository: jpazdyga/whoami
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: c652c6
+  tag: 902356
 
 imagePullSecrets: []
 nameOverride: ""
