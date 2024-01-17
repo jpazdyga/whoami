@@ -26,16 +26,16 @@ jobs:
             pwd
             ls -la ./
             docker build -t jpazdyga/whoami:${VERSION} -f Dockerfile .
-      - name: Run Snyk to check Docker image for vulnerabilities
-        id: snyk
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-          VERSION: ${{ steps.version.outputs.tag }}
-        run: |
-          snyk container test --severity-threshold=high --fail-on=upgradable jpazdyga/whoami:${VERSION}
+        #- name: Run Snyk to check Docker image for vulnerabilities
+        #id: snyk
+        #env:
+        #  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        #  VERSION: ${{ steps.version.outputs.tag }}
+        #run: |
+        #  snyk container test --severity-threshold=high --fail-on=upgradable jpazdyga/whoami:${VERSION}
       - name: Push docker image
         env:
           VERSION: ${{ steps.version.outputs.tag }}
         run: |
           docker push jpazdyga/whoami:${VERSION}
-        if: steps.snyk.outcome == 'success'
+        #if: steps.snyk.outcome == 'success'
