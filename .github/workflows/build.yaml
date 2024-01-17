@@ -8,6 +8,8 @@ jobs:
     strategy:
       fail-fast: true
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Set docker tag and backend version variable
         id: version
         run: |
