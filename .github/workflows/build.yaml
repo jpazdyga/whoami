@@ -52,7 +52,7 @@ jobs:
           VERSION: ${{ steps.version.outputs.tag }}
         run: |
           cat helm/values.yaml
-          sed -i "/^  tag:$/{n;s/.*/  tag: '${VERSION}'/}" helm/values.yaml
+          sed -i "s|^  tag:.*|  tag: ${VERSION}|g" helm/values.yaml
           cat helm/values.yaml
 
       - name: Push updated values.yaml file
