@@ -21,6 +21,8 @@ jobs:
         env:
           VERSION: ${{ steps.version.outputs.tag }}
         run: |
+            pwd
+            ls -la ./
             docker build -t jpazdyga/whoami:${VERSION} -f Dockerfile .
       - name: Run Snyk to check Docker image for vulnerabilities
         id: snyk
