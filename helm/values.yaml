@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: traefik/whoami
+  repository: jpazdyga/whoami
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: d5a53c
